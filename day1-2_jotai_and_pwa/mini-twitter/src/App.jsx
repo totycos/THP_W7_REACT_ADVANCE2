@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import OtherProfilePage from "./pages/OtherProfilePage";
 import Navbar from "./components/Navbar";
 import PrivateRoutes from "./utils/PrivateRoutes";
+import { isLoggedAtom } from "./atoms/auth";
 
 import "./App.scss";
 

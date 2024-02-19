@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { useSelector, useDispatch } from "react-redux";
+import { useAtom } from "jotai";
+import { isLoggedAtom } from "../../atoms/auth";
 import profile from "../../assets/profile.svg";
 import logo from "../../assets/logo.svg";
 import home from "../../assets/home.svg";
@@ -9,17 +10,12 @@ import "./index.scss";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const isLogged = useSelector((state) => state.auth.isLogged);
-  const dispatch = useDispatch();
-
-  const updateAuth = (newAuthValue) => {
-    dispatch({ type: "UPDATE_AUTH", payload: newAuthValue });
-  };
+  const [isLogged, setIsLogged] = useAtom(isLoggedAtom);
 
   const handleLogout = () => {
     if (isLogged) {
       Cookies.remove("token");
-      updateAuth(false);
+      setIsLogged(false);
       console.log("isLogged after logout: ", isLogged);
       navigate(`/`);
     }

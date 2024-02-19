@@ -1,21 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authApi from "../../services/authApi";
-import { useSelector, useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import "./index.scss";
+import { useAtom } from "jotai";
+import { isLoggedAtom } from "../../atoms/auth";
 
 const LoginForm = () => {
   const { response, error, loginFetch } = authApi();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const isLogged = useSelector((state) => state.auth.isLogged);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const updateAuth = (newAuthValue) => {
-    dispatch({ type: "UPDATE_AUTH", payload: newAuthValue });
-  };
+  const [isLogged, setIsLogged] = useAtom(isLoggedAtom);
 
   const handleLogin = async () => {
     await loginFetch(email, password);
@@ -25,7 +21,7 @@ const LoginForm = () => {
     console.log(response);
     if (response && response.jwt) {
       Cookies.set("token", response.jwt);
-      updateAuth(true);
+      setIsLogged(true);
       console.log("isLogged after login: ", isLogged);
       navigate("/");
     }

@@ -1,8 +1,9 @@
 import { Outlet, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useAtom } from "jotai";
+import { isLoggedAtom } from "../../atoms/auth";
 
 const PrivateRoutes = () => {
-  const isLogged = useSelector((state) => state.auth.isLogged);
+  const [isLogged, setIsLogged] = useAtom(isLoggedAtom);
 
   return isLogged ? <Outlet /> : <Navigate to="/connection" />;
 };

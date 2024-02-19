@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
 import Posts from "../../components/Posts";
+import { useAtom } from "jotai";
+import { isLoggedAtom } from "../../atoms/auth";
 
 const HomePage = () => {
-  const isLogged = useSelector((state) => state.auth.isLogged);
-
+  const [isLogged, setIsLogged] = useAtom(isLoggedAtom);
+  console.log("isLoggedAtom :", isLogged);
   return (
     <>
       {isLogged ? (

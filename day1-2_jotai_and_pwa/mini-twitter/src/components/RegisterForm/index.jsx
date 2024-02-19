@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authApi from "../../services/authApi";
 import Cookies from "js-cookie";
-import { useSelector, useDispatch } from "react-redux";
+import { useAtom } from "jotai";
+import { isLoggedAtom } from "../../atoms/auth";
 import "./index.scss";
 
 const RegisterForm = () => {
@@ -10,13 +11,8 @@ const RegisterForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const isLogged = useSelector((state) => state.auth.isLogged);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const updateAuth = (newAuthValue) => {
-    dispatch({ type: "UPDATE_AUTH", payload: newAuthValue });
-  };
+  const [isLogged, setIsLogged] = useAtom(isLoggedAtom);
 
   const handleRegister = async () => {
     await registerFetch(username, email, password);
@@ -25,7 +21,7 @@ const RegisterForm = () => {
   useEffect(() => {
     if (response && response.jwt) {
       Cookies.set("token", response.jwt);
-      updateAuth(true);
+      setIsLogged(true);
       console.log("isLogged after register: ", isLogged);
       navigate("/");
     }
