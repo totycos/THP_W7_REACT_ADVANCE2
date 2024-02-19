@@ -1,3 +1,15 @@
+@mixin small-screen {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mobile-screen {
+  @media only screen and (max-width: 490px) {
+    @content;
+  }
+}
+
 .navbar {
   width: 88px;
   height: 100%;
@@ -10,6 +22,19 @@
   border-right: 1px solid grey;
   position: fixed;
   z-index: 2;
+
+  @include small-screen {
+    width: 14.7%;
+    min-width: 34px;
+  }
+
+  @include mobile-screen {
+    flex-direction: row;
+    justify-content: space-around;
+    width: calc(100% - 15px);
+    height: auto;
+    border-top: 1px solid grey;
+  }
 
   &__logo {
     width: 28px;

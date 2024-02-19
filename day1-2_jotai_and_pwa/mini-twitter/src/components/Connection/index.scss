@@ -1,3 +1,9 @@
+@mixin small-screen {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
 .connectionContainer {
   width: 100%;
   height: 100%;
@@ -6,9 +12,18 @@
   background-color: black;
   display: flex;
   margin-left: -105px;
+
+  @include small-screen {
+    margin-left: -6%;
+    margin-top: 10px;
+  }
 }
 
 .connectionLogoContainer {
+  @include small-screen {
+    display: none;
+  }
+
   img {
     width: 100%;
     margin-top: 8em;
@@ -17,6 +32,10 @@
 
 .linksContainer {
   margin: 40px;
+
+  @include small-screen {
+    margin: 10px;
+  }
 
   &__registerContainer {
     h1 {

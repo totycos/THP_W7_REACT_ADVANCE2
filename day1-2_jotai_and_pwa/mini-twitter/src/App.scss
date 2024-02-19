@@ -1,6 +1,22 @@
+@mixin small-screen {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mobile-screen {
+  @media only screen and (max-width: 490px) {
+    @content;
+  }
+}
+
 #root {
   display: flex;
   height: 100%;
+
+  @include mobile-screen {
+    flex-direction: column-reverse;
+  }
 }
 
 main {
@@ -9,4 +25,13 @@ main {
   background-color: black;
   border-right: 1px solid grey;
   margin-left: 105px;
+
+  @include small-screen {
+    margin-left: 14.7%;
+  }
+
+  @include mobile-screen {
+    overflow-y: auto;
+    margin-left: 0;
+  }
 }
