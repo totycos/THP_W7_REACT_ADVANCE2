@@ -1,0 +1,47 @@
+.otherProfile {
+  &__username {
+    width: 80%;
+    height: 40px;
+    margin: 10px 40px;
+    border: 0;
+    border-bottom: 1px solid grey;
+    background-color: black;
+    color: rgb(113, 118, 123);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__description {
+    width: 80%;
+    height: auto;
+    margin: 10px 40px 20px;
+    border: 0;
+    border-bottom: 1px solid grey;
+    background-color: black;
+    color: rgb(113, 118, 123);
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+}
+
+.otherProfilePosts {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 10px 40px;
+  position: relative;
+
+  &__username {
+    color: #e7e9ea;
+    font-weight: 600;
+    margin: 20px 0 0;
+  }
+
+  &__time {
+    color: rgb(113, 118, 123);
+  }
+
+  &__text {
+    margin: 5px 0px;
+  }
+}

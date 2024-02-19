@@ -1,0 +1,78 @@
+.postForm {
+  padding: 10px 40px;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+
+  input {
+    height: 60px;
+    background-color: black;
+    border: 0;
+    border-bottom: 1px solid grey;
+    color: #536471;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  > div {
+    text-align: right;
+  }
+
+  button {
+    border-radius: 20px;
+    width: 80px;
+    height: 36px;
+    background-color: rgb(29, 155, 240);
+    border-color: rgba(0, 0, 0, 0);
+    color: #e7e9ea;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+.singlePost {
+  border-bottom: 1px solid grey;
+  padding: 10px 40px;
+  position: relative;
+
+  &__remove {
+    width: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+    }
+  }
+
+  &__author {
+    color: #e7e9ea;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 5px 0px;
+  }
+
+  &__time {
+    color: rgb(113, 118, 123);
+  }
+
+  &__like {
+    color: rgb(113, 118, 123);
+
+    svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      vertical-align: sub;
+    }
+  }
+}

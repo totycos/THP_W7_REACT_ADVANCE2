@@ -1,0 +1,37 @@
+.navbar {
+  width: 88px;
+  height: 100%;
+  margin: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  text-align: center;
+  border-right: 1px solid grey;
+  position: fixed;
+  z-index: 2;
+
+  &__logo {
+    width: 28px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  &__home {
+    width: 28px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  &__profile {
+    width: 28px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  &__logout {
+    width: 28px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+}

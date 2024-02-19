@@ -1,0 +1,66 @@
+.loginFormContainer {
+  background-color: black;
+  width: calc(100% - 20px);
+  height: 100%;
+  padding: 10px;
+  position: fixed;
+  z-index: 3;
+  margin-left: -105px;
+}
+
+.loginForm {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 4em auto;
+
+  h1 {
+    text-align: center;
+    font-size: 46px;
+  }
+
+  &__email {
+    background-color: black;
+    border: 1px solid silver;
+    width: 240px;
+    height: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    color: #e7e9ea;
+    font-size: 14px;
+  }
+
+  &__password {
+    background-color: black;
+    border: 1px solid silver;
+    width: 240px;
+    height: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    color: #e7e9ea;
+    font-size: 14px;
+  }
+
+  button {
+    border-radius: 20px;
+    width: 280px;
+    height: 36px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgba(152, 152, 152, 1);
+    color: rgb(29, 155, 240);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+
+  .loginForm__register {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .loginForm__registerLink {
+    color: rgb(29, 155, 240);
+    text-decoration: none;
+  }
+}
