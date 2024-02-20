@@ -6,7 +6,7 @@ import postApi from "../../services/postApi";
 import Cookies from "js-cookie";
 import "./index.scss";
 
-const index2 = () => {
+const index = () => {
   const { response, error, getUserDataFetch } = userApi();
   const {
     postResponse,
@@ -47,7 +47,7 @@ const index2 = () => {
   }, [postError]);
 
   return (
-    <>
+    <div className="postContainer">
       <CreatePostForm
         postApi={{
           getPostsFetch,
@@ -66,8 +66,8 @@ const index2 = () => {
         }}
         token={token}
       />
-    </>
+    </div>
   );
 };
 
-export default index2;
+export default index;

@@ -2,14 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), VitePWA(manifestForPlugin)],
-})
-
 const manifestForPlugin = {
   registerType: 'prompt',
-  includeAssests: ['favicon.ico', "apple-touc-icon.png", "masked-icon.svg"],
+  includeAssets: ['images/y-128.png', 'images/y-144.png', 'images/y-152.png', 'images/y-192.png', 'images/y-256.png', 'images/y-512.png'],
   manifest: {
     name: "Y",
     short_name: "Y",
@@ -17,31 +12,37 @@ const manifestForPlugin = {
     icons: [{
       "src": "images/y-128.png",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": 'any maskable'
     }, {
       "src": "images/y-144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": 'any maskable'
     }, {
       "src": "images/y-152.png",
       "sizes": "152x152",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": 'any maskable'
     }, {
       "src": "images/y-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": 'any maskable'
     }, {
       "src": "images/y-256.png",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": 'any maskable'
     }, {
       "src": "images/y-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": 'any maskable'
     }
     ],
-    theme_color: 'black',
-    background_color: 'black',
+    theme_color: '#000',
+    background_color: '#000',
     display: "standalone",
     scope: '/',
     start_url: "/",
@@ -49,4 +50,8 @@ const manifestForPlugin = {
   },
 };
 
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), VitePWA(manifestForPlugin)],
+})
 

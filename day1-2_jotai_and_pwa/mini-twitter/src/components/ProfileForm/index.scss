@@ -1,3 +1,9 @@
+@mixin mobile-screen {
+  @media only screen and (max-width: 490px) {
+    @content;
+  }
+}
+
 .containerTitle {
   width: 100%;
   max-width: 520px;
@@ -13,6 +19,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: 60px;
 
   &__username {
     width: 80%;
@@ -24,6 +31,10 @@
     color: rgb(113, 118, 123);
     font-size: 20px;
     font-weight: 600;
+
+    @include mobile-screen {
+      margin: 10px auto;
+    }
   }
 
   &__description {
@@ -36,6 +47,10 @@
     color: rgb(113, 118, 123);
     font-size: 14px;
     font-weight: 600;
+
+    @include mobile-screen {
+      margin: 10px auto;
+    }
   }
 
   &__containerButton {

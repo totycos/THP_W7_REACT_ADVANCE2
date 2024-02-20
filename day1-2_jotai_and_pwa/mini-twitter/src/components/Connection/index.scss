@@ -14,8 +14,10 @@
   margin-left: -105px;
 
   @include small-screen {
-    margin-left: -6%;
-    margin-top: 10px;
+    margin-left: -156px;
+    margin-top: -280px;
+    top: 50%;
+    left: 50%;
   }
 }
 
@@ -31,10 +33,12 @@
 }
 
 .linksContainer {
-  margin: 40px;
+  margin: 4% 40px;
+  height: fit-content;
 
   @include small-screen {
     margin: 10px;
+    width: 300px;
   }
 
   &__registerContainer {

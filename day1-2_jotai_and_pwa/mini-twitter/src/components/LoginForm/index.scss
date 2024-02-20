@@ -4,6 +4,12 @@
   }
 }
 
+@mixin mobile-screen {
+  @media only screen and (max-width: 490px) {
+    @content;
+  }
+}
+
 .loginFormContainer {
   background-color: black;
   width: calc(100% - 20px);
@@ -13,8 +19,8 @@
   z-index: 3;
   margin-left: -105px;
 
-  @include small-screen {
-    margin-left: -14.7%;
+  @include mobile-screen {
+    margin: auto;
   }
 }
 

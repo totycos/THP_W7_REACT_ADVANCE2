@@ -12,7 +12,7 @@
 
 #root {
   display: flex;
-  height: 100%;
+  height: auto;
 
   @include mobile-screen {
     flex-direction: column-reverse;
